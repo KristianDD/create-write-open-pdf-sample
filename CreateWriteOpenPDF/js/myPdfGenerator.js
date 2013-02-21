@@ -4,6 +4,7 @@ var PdfApp = function() {
 PdfApp.prototype = function() {
 	var pdfText = "",
 	infoDiv,
+    pathDiv,
 	pathToWrittenFile = "",
 	onFileGenerated
         
@@ -48,11 +49,13 @@ PdfApp.prototype = function() {
 		var pdf = CreatePDF(false);
 		onFileGenerated = onGenerated;
 		infoDiv = document.getElementById("infoField");
+        pathDiv = document.getElementById("pathField");
 		pathToWrittenFile = window.location.href.replace('index.html', '').replace("file://", "") + fileName;
 		infoDiv.innerText = "Generating...";
 		pdf.onload(function() {
 			pdfText = pdf.getText();
 			infoDiv.innerText = "Gnerated! Writing...";
+            pathDiv.innerText = "Path: " + pathToWrittenFile;
 			writeFile();
 		})
 	};
