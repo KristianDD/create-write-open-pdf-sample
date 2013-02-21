@@ -11,6 +11,9 @@
     <DeviceOrientations>Portrait;Landscape</DeviceOrientations>
     <iOSStatusBarStyle>Default</iOSStatusBarStyle>
     <AndroidHardwareAcceleration>false</AndroidHardwareAcceleration>
+    <BundleVersion>1.0</BundleVersion>
+    <iOSDisplayName />
+    <AndroidVersionCode>1</AndroidVersionCode>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="App_Resources" />
@@ -32,6 +35,9 @@
     <Folder Include="App_Resources\Android\drawable-nodpi">
       <Platform>Android</Platform>
     </Folder>
+    <Folder Include="js" />
+    <Folder Include="styles" />
+    <Folder Include="styles\img" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="App_Resources\iOS\icon.png" />
@@ -58,16 +64,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
-    <Content Include="jquery-mobile\images\ajax-loader.gif" />
-    <Content Include="jquery-mobile\images\icons-18-black.png" />
-    <Content Include="jquery-mobile\images\icons-18-white.png" />
-    <Content Include="jquery-mobile\images\icons-36-black.png" />
-    <Content Include="jquery-mobile\images\icons-36-white.png" />
-    <Content Include="jquery-mobile\jquery-1.8.2.min.js" />
-    <Content Include="jquery-mobile\jquery.mobile-1.2.0.min.css" />
-    <Content Include="jquery-mobile\jquery.mobile-1.2.0.min.js" />
-    <Content Include="js\hello-world.js" />
-    <Content Include="styles\main.css" />
+    <Content Include="libraries\bytescoutpdf1.04.80.js" />
+    <Content Include="libraries\checkdatauri.js" />
+    <Content Include="libraries\createpdf.js" />
+    <Content Include="libraries\decodeBase64.js" />
+    <Content Include="libraries\downloadify.min.js" />
+    <Content Include="libraries\downloadify.swf" />
+    <Content Include="libraries\jquery-1.8.2.min.js" />
+    <Content Include="js\app.js" />
+    <Content Include="js\myPdfGenerator.js" />
+    <Content Include="libraries\swfobject.js" />
     <Content Include="cordova.ios.js">
       <Platform>iOS</Platform>
       <TargetName>cordova.js</TargetName>
@@ -76,6 +82,20 @@
       <Platform>Android</Platform>
       <TargetName>cordova.js</TargetName>
     </Content>
+    <Content Include="styles\img\background.png" />
+    <Content Include="styles\img\footer-background.png" />
+    <Content Include="styles\img\header.png" />
+    <Content Include="styles\img\logo.png" />
+    <Content Include="styles\main.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <CordovaPlugin Include="com.phonegap.plugins.childbrowser">
+      <Version>4.0.0</Version>
+      <Name>Child Browser</Name>
+    </CordovaPlugin>
+  </ItemGroup>
+  <ItemGroup>
+    <CordovaPluginContent Include="com.phonegap.plugins.childbrowser\childbrowser.js" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Telerik\ICE\Tools\Mobile\MobileTools.targets" />
 </Project>
